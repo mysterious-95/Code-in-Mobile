@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Spooky</title>
+    <style type="text/css" media="all">
+      @import url('https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap');
+        
+        *{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        body{
+          height: 100vh;
+          width: 100%;
+          background: #000;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-family: 'Tilt Prism', cursive;
+        }
+        .text{
+          font-size: 2.5rem;
+          font-weight: 500;
+          color: red;
+          animation: animate 2s ease-in-out infinite;
+        }
+        @keyframes animate{
+          0%{
+            transform: scale(1);
+            opacity: 1;
+          }
+          100%{
+            transform: scale(2);
+            opacity: 0;
+          }
+        }
+        img{
+          position: absolute;
+          height: 300px;
+          width: 300px;
+          top: 10%;
+          opacity: 0.5;
+        }
+        .ghost{
+          top: 55%;
+          opacity: 0.2;
+        }
+    </style>
+  </head>
+  <body>
+    <h1 class="text">Time</h1>
+    <img src="help.png" alt="reload" />
+    <img class="ghost" src="ghost.gif" alt="reload" />
+    <script type="text/javascript" charset="utf-8">
+      let text = document.querySelector(".text");
+      let words=["time", "is", "ticking", "tick !", "tock !", "tick !", "tock !"];
+      let i =1;
+      setInterval(function() {
+        if(i<words.length){
+          text.innerText = words[i];
+          i++;
+        }else{
+          text.innerText = words[0];
+          i=1;
+        }
+      }, 2000);
+    </script>
+  </body>
+</html>
