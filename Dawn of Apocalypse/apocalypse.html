@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Apocalypse</title>
+    <style type="text/css" media="all">
+    @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body{
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container{
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        background: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .moon{
+        position: absolute;
+        height: 100px;
+        width: 100px;
+        top: 10%;
+        left: 10%;
+        border-radius: 50%;
+        background: #000;
+        box-shadow: inset 15px 15px 5px #fff8;
+      }
+      .moon::before{
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        box-shadow: 2px 2px 30px #f00,
+        2px 2px 30px #2117ff,
+        5px 5px 10px #f00,
+        -5px -5px 10px #00f,
+        -2px -2px 20px #b825ff,
+        2px -2px #2529ff,
+        -2px 2px #25ff21;
+        animation: animate 2s linear infinite;
+      }
+      @keyframes animate{
+        0%{
+          transform: rotate(0deg);
+        }
+        100%{
+          transform: rotate(360deg);
+        }
+      }
+      .earth{
+        position: absolute;
+        bottom: -65%;
+        left: 1%;
+        height: 50rem;
+        width: 50rem;
+        border-radius: 50%;
+        border: 1px solid #fff;
+        box-shadow: 0 0 40px #fff;
+      }
+      .text{
+        color: #fff;
+        font-family: 'Bruno Ace SC', cursive;
+        font-size: 1.5rem;
+        text-align: center;
+      }
+      .text span{
+        color: #f00;
+        font-size: 2.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="moon"></div>
+      <div class="earth"></div>
+      <div class="heroText">
+        <h1 class="text">Dawn of <span>Apocalypse</span></h1>
+      </div>
+    </div>
+  </body>
+</html>
